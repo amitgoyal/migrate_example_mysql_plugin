@@ -1,0 +1,32 @@
+id: users
+label: User migration
+migration_group: plugin_demo
+source:
+  plugin: users
+destination:
+  plugin: entity:user
+process:
+  pass: password
+  mail: email
+  init: email
+  status:
+    plugin: default_value
+    default_value: 1
+  roles:
+    plugin: default_value
+    default_value: 2
+  name:
+    plugin: dedupe_entity
+    source: username
+    entity_type: user
+    field: name
+    postfix: _
+  created:
+    plugin: callback
+    source: created
+    callable: strtotime
+  changed: '@created'
+  access: '@created'
+  login: '@created'
+
+migration_dependencies: {}

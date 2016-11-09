@@ -1,0 +1,9 @@
+type: module
+name: Multiple MySql tables to D8
+description: 'Examples for MySql migration.'
+package: Examples
+core: 8.x
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
+  - migrate_example_mysql_setup

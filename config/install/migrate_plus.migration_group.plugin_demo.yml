@@ -1,0 +1,8 @@
+id: plugin_demo
+label: MySql Demo imports
+description: A Demonstration for migrating data from multiple mysql tables.
+source_type: Custom tables
+shared_configuration:
+  source:
+    key: db_migration_plugin
+

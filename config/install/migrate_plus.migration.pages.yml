@@ -1,0 +1,44 @@
+id: pages
+label: Pages
+migration_group: plugin_demo
+source:
+  plugin: pages
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: page
+  title: title
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  field_city: city
+  field_state: state
+  field_site/uri: site_url
+  field_site/title: site_name
+  #uid:
+  #  plugin: default_value
+  #  default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  created:
+    plugin: callback
+    callable: strtotime
+    source: created_date
+  field_tags:
+    -
+      plugin: explode
+      source: keywords
+      delimiter: ,
+    -
+      plugin: entity_generate
+  uid:
+      plugin: migration
+      migration: users
+      source: author
+migration_dependencies:
+  required:
+    - users

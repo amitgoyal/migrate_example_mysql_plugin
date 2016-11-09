@@ -1,0 +1,5 @@
+type: module
+name: Migrate Example Setup for MySql  to D8 Migration
+description: 'Provides fields for page content type and other settings'
+package: Examples
+core: 8.x
