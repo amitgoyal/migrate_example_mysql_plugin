@@ -5,6 +5,7 @@ source:
   plugin: users
 destination:
   plugin: entity:user
+  md5_passwords: true
 process:
   pass: password
   mail: email
